@@ -27,15 +27,22 @@ public class calculator {
                     result = a * b;
                     break;
                 case 4:
-                    result = b != 0 ? a / b : Double.NaN;
+                    if (b != 0) {
+                        result = a / b;
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    }
                     break;
                 case 5:
-                    result = b != 0 ? a % b : Double.NaN;
+                    if (b != 0) {
+                        result = a % b;
+                    } else {
+                        System.out.println("Error: Modulo by zero is not allowed.");
+                    }
                     break;
                 default:
-                    System.out.println("Invalid operation");
-                    scanner.close();
-                    return;
+                    System.out.println("Error: Invalid operation selected.");
+
             }
 
             System.out.println("The result is: " + result);
